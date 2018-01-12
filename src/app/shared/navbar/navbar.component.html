@@ -11,17 +11,14 @@
         <div class="collapse navbar-collapse" id="navbarToggler">
             <ul class="navbar-nav ml-auto">
                 
-                <li class="nav-item" >
-                    <a href="y" class="nav-link" target="_blank"><i class="nc-icon nc-book-bookmark"></i> Quem Somos</a>                    
-                </li>
-                <li class="nav-item" >
-                    <a href="#" class="nav-link" target="_blank"><i class="nc-icon nc-book-bookmark"></i> Gabarito 2017</a>
+                <li class="nav-item" *ngIf="!isLanding()">
+                    <a [routerLink]="['/landing']" class="nav-link"> Home</a>
                 </li>
                 <li class="nav-item" >
                     <a href="#" class="nav-link" target="_blank"><i class="nc-icon nc-book-bookmark"></i> Matrícula 2018</a>
                 </li>
-                <li class="nav-item" >
-                    <a href="#" class="nav-link" target="_blank"><i class="nc-icon nc-single-copy-04"></i> Provas Antigas</a>
+                <li class="nav-item" *ngIf="!isOldTests()" >
+                    <a [routerLink]="['/testes']" class="nav-link"><i class="nc-icon nc-single-copy-04"></i> Provas Antigas</a>
                 </li>
                 <li class="nav-item" >
                     <a href="#" class="nav-link" target="_blank"><i class="nc-icon nc-book-bookmark"></i> Resultados</a>

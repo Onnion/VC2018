@@ -6,23 +6,22 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 
 import { AppComponent } from './app.component';
-import { SignupComponent } from './signup/signup.component';
 import { LandingComponent } from './landing/landing.component';
-import { ProfileComponent } from './profile/profile.component';
-import { HomeComponent } from './home/home.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { FooterComponent } from './shared/footer/footer.component';
 
-import { HomeModule } from './home/home.module';
+import { OldTestesComponent } from './old-testes/old-testes.component';
+import { SpinnesplendiComponent } from './spinnesplendi/spinnesplendi.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    SignupComponent,
     LandingComponent,
-    ProfileComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    OldTestesComponent,
+    SpinnesplendiComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +29,6 @@ import { HomeModule } from './home/home.module';
     FormsModule,
     RouterModule,
     AppRoutingModule,
-    HomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
