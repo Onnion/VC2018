@@ -12,18 +12,14 @@
             <ul class="navbar-nav ml-auto">
                 
                 <li class="nav-item" *ngIf="!isLanding()">
-                    <a [routerLink]="['/landing']" class="nav-link"> Home</a>
+                    <a [routerLink]="['/landing']" class="nav-link"><i class="nc-icon nc-home"></i>  Home</a>
                 </li>
-                <li class="nav-item" >
-                    <a href="#" class="nav-link" target="_blank"><i class="nc-icon nc-book-bookmark"></i> Matrícula 2018</a>
+                <li class="nav-item" *ngIf="!isRegistry()">
+                    <a [routerLink]="['/registry']" class="nav-link"><i class="nc-icon nc-book-bookmark"></i> Matrícula 2018</a>
                 </li>
                 <li class="nav-item" *ngIf="!isOldTests()" >
                     <a [routerLink]="['/testes']" class="nav-link"><i class="nc-icon nc-single-copy-04"></i> Provas Antigas</a>
                 </li>
-                <li class="nav-item" >
-                    <a href="#" class="nav-link" target="_blank"><i class="nc-icon nc-book-bookmark"></i> Resultados</a>
-                </li>
-
                  <!-- <li class="nav-item" *ngIf="!isHome()">
                     <a [routerLink]="['/home']" *ngIf="!isDocumentation()" class="nav-link"><i class="nc-icon nc-layout-11"></i>Components</a>
                     <a [routerLink]="['/home']" *ngIf="isDocumentation()" class="nav-link">Back to Kit</a>

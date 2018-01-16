@@ -5,14 +5,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 
+//PAGES
 import { AppComponent } from './app.component';
 import { LandingComponent } from './landing/landing.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { FooterComponent } from './shared/footer/footer.component';
-
 import { OldTestesComponent } from './old-testes/old-testes.component';
 import { SpinnesplendiComponent } from './spinnesplendi/spinnesplendi.component';
 
+//COMPONENTS
+import { FooterComponent } from './shared/footer/footer.component';
+import { NavbarComponent } from './shared/navbar/navbar.component';
+
+//LIBS
+import { Ng2Timeline } from 'ng2-timeline';
+import { RegistryComponent } from './registry/registry.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import { SpinnesplendiComponent } from './spinnesplendi/spinnesplendi.component'
     NavbarComponent,
     FooterComponent,
     OldTestesComponent,
-    SpinnesplendiComponent
+    SpinnesplendiComponent,
+    RegistryComponent
   ],
   imports: [
     BrowserModule,
@@ -29,6 +35,7 @@ import { SpinnesplendiComponent } from './spinnesplendi/spinnesplendi.component'
     FormsModule,
     RouterModule,
     AppRoutingModule,
+    Ng2Timeline,
   ],
   providers: [],
   bootstrap: [AppComponent]

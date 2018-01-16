@@ -1,5 +1,6 @@
 .section{
-    padding: 70px 0;
+    padding: 0px!important;
+    padding-top: 70px!important;
     position: relative;
     background-color: #FFFFFF;
 }
@@ -35,6 +36,7 @@
 .section-gold,
 .section-dark{
     position: relative;
+    padding-bottom: 70px!important;
 
     .title,
     .info-title,

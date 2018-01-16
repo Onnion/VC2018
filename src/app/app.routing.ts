@@ -6,12 +6,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { LandingComponent } from './landing/landing.component';
 import { OldTestesComponent } from './old-testes/old-testes.component';
 import { SpinnesplendiComponent } from './spinnesplendi/spinnesplendi.component';
+import { RegistryComponent } from './registry/registry.component';
 
 
 const routes: Routes =[
     { path: 'spinnesplendi',    component: SpinnesplendiComponent },    
     { path: 'testes',           component: OldTestesComponent },  
     { path: 'landing',          component: LandingComponent },
+    { path: 'registry',          component: RegistryComponent },    
     { path: '',                 redirectTo: 'landing', pathMatch: 'full' }
 ];
 
