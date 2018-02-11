@@ -1,58 +1,105 @@
 import { Component, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 
 @Component({
-    selector: 'app-landing',
-    templateUrl: './landing.component.html',
-    styleUrls: ['./landing.component.scss']
+  selector: 'app-landing',
+  templateUrl: './landing.component.html',
+  styleUrls: ['./landing.component.css']
 })
 
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  private API_URL_DEV = 'http://localhost:3000/api/';
 
-  ngOnInit() {}
+  private contact_form = {
+    'name': null,
+    'subject': null,
+    'message': null,
+    'email': null
+  }
 
-   /**
-    * Each item will have title,content,complete flag and icon
-    * which will be displayed on the side. Icon is in html
-    */
-  public timelineData:Array<Object> =[
+  private status_email = {
+    'send': null,
+    'sending': null,
+    'error_send': null,
+    'pre_send': true
+  }
+
+  constructor(
+    private http: Http
+  ) { }
+
+  ngOnInit() { }
+
+  public timelineData: Array<Object> = [
     {
-      title:"Ser aluno da Rede Pública",
-      icon:'<i class="fa fa-pencil"></i>',
-      content:"Para participar do Vestibular Cidadão o aluno deve ter concluído ou ainda estar matriculado no terceiro ano do ensino médio em uma Escola da Rede Pública de Ensino.",
-      complete:false
+      title: "Ser aluno da Rede Pública",
+      icon: '<i class="fa fa-pencil"></i>',
+      content: "Para participar do Vestibular Cidadão o aluno deve ter concluído ou ainda estar matriculado no terceiro ano do ensino médio em uma Escola da Rede Pública de Ensino.",
+      complete: false
     },
     {
-      title:"Bolsista pode participar?",
-      icon:'<i class="fa fa-pencil"></i>',
-      content:"SIM! Porém só são aceitas inscrições de bolsistas 100%, mediante comprovação.",
-      complete:false
+      title: "Bolsista pode participar?",
+      icon: '<i class="fa fa-pencil"></i>',
+      content: "SIM! Porém só são aceitas inscrições de bolsistas 100%, mediante comprovação.",
+      complete: false
     },
     {
-      title:"Onde são as aulas e quais os horários?",
-      icon:'<i class="fa fa-clock-o"></i>',
-      content:"As aulas acontecem no Anexo II, da Faculdade de Direito do Recife, ao lado do Hospital Exercito, no bairro da Boa Vista, próximo ao Parque 13 de maio. As aulas ocorrem de segunda a sábado. De segunda a sexta no horário da tarde, das 13 às 18:15 e, aos sábados, das 08 às 13:15.",
-      complete:false
+      title: "Onde são as aulas e quais os horários?",
+      icon: '<i class="fa fa-clock-o"></i>',
+      content: "As aulas acontecem no Anexo II, da Faculdade de Direito do Recife, ao lado do Hospital Exercito, no bairro da Boa Vista, próximo ao Parque 13 de maio. As aulas ocorrem de segunda a sábado. De segunda a sexta no horário da tarde, das 13 às 18:15 e, aos sábados, das 08 às 13:15.",
+      complete: false
     },
     {
-      title:"O que eu preciso levar para fazer a inscrição?",
-      icon:'<i class="fa fa-address-card-o"></i>',
-      content:'Para a Inscrição basta apresentar um Documento de identificação OFICIAL:( RG, Carteira de Trabalho, Passaporte ), ficha 19 ou declaração escolar, taxa de R$20,00',
-      complete:false
+      title: "O que eu preciso levar para fazer a inscrição?",
+      icon: '<i class="fa fa-address-card-o"></i>',
+      content: 'Para a Inscrição basta apresentar um Documento de identificação OFICIAL:( RG, Carteira de Trabalho, Passaporte ), ficha 19 ou declaração escolar, taxa de R$20,00',
+      complete: false
     },
     {
-      title:"Onde faço a minha inscrição?",
-      icon:'<i class="fa fa-university"></i>',
-      content:"Na Faculdade de Direito do Recife, que fica na Praça Adolfo Cirne, no Bairro da Boa Vista. Próximo ao Parque 13 de maio.",
-      complete:false
+      title: "Onde faço a minha inscrição?",
+      icon: '<i class="fa fa-university"></i>',
+      content: "Na Faculdade de Direito do Recife, que fica na Praça Adolfo Cirne, no Bairro da Boa Vista. Próximo ao Parque 13 de maio.",
+      complete: false
     },
     {
-      title:"Paga alguma TAXA?",
-      icon:'<i class="fa fa-usd"></i>',
-      content:"SIM, existe a taxa de R$20,00 que o candidato paga na inscrição. O curso é totalmente gratuito, existe a cobrança dessa taxa para a realização do processo seletivo.",
-      complete:false
+      title: "Paga alguma TAXA?",
+      icon: '<i class="fa fa-usd"></i>',
+      content: "SIM, existe a taxa de R$20,00 que o candidato paga na inscrição. O curso é totalmente gratuito, existe a cobrança dessa taxa para a realização do processo seletivo.",
+      complete: false
     },
-    
+
   ];
+
+  sendMail() {
+
+    if (
+      this.contact_form.email && this.contact_form.name &&
+      this.contact_form.message && this.contact_form.subject) {
+
+      this.status_email.pre_send = false;
+      this.status_email.sending = true;
+      this.http.post(this.API_URL_DEV + 'email', this.contact_form).subscribe((result: any) => {
+        this.status_email.sending = false;
+        this.status_email.send = true;
+
+        this.contact_form.email = null;
+        this.contact_form.name = null;
+        this.contact_form.subject = null;
+        this.contact_form.message = null;
+
+      });
+
+    } else {
+      this.status_email.pre_send = false;
+      this.status_email.error_send = true;
+      setTimeout(() => {
+        this.status_email.pre_send = true;
+        this.status_email.error_send = false;
+      },1000)
+    }
+
+
+
+  }
 }

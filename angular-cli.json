@@ -20,7 +20,7 @@
       "prefix": "app",
       "styles": [
           "../node_modules/bootstrap/dist/css/bootstrap.min.css",
-          "assets/sass/paper-kit.scss",
+          "assets/css/paper-kit.css",
           "assets/css/demo.css",
           "assets/css/nucleo-icons.css"
       ],
@@ -58,7 +58,7 @@
     }
   },
   "defaults": {
-    "styleExt": "scss",
+    "styleExt": "css",
     "component": {}
   }
 }

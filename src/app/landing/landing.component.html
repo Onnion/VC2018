@@ -1,20 +1,21 @@
-<div class="page-header page-header-xs" data-parallax="true">
+<div class="page-header page-header-xs" data-parallax="true" style="background: url('../../assets/img/background 1.png'); background-size: cover;" >
     <div class="filter"></div>
     <div class="container">
         <div class="motto text-center">
-            <h1>Example page</h1>
-            <h3>Start designing your landing page here.</h3>
+            <h1 class="vestibular_cidadao">Vestibular Cidadão</h1>
+            <h3>Todos chupamos a rola de Alysson.</h3>
             <br />
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="btn btn-outline-neutral btn-round"><i class="fa fa-play"></i>Watch video</a>
             <button type="button" class="btn btn-outline-neutral btn-round">Download</button>
         </div>
     </div>
 </div>
 <div class="main">
     <div class="section text-center" id="about-us">
+            <app-saparator color="green" position='right'></app-saparator>
+            
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mr-auto ml-auto">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
                     <h2 class="title">Quem somos</h2>
                     <h5 class="description">O Projeto Vestibular Cidadão é um curso pré-vestibular gratuito voltado para alunos e ex-alunos de escolas públicas e ex-bolsitas de escolar particulares de todas as idades. Objetiva preparar os estudantes para o difícil processo seletivo das universidades/faculdades, atenuando assim as diferenças estruturais entre estes e os estudantes oriundos de escolas particulares. O Vestibular Cidadão é mais que um cursinho: é uma “oficina de cidadãos”.</h5>
                     <br>
@@ -26,37 +27,42 @@
     <div class="section text-center" id="results">
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mr-auto ml-auto">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
                     <h2 class="title">Nossos resultados</h2>
                     <h5 class="description">
-                        No ano de 2016 o Vestibular Cidadão continuou com o sucesso dos anos anteriores e teve uma aprovação recorde nos Vestibulares das Universidades Publicas não apenas do Estado de Pernambuco, mas também de todo o Nordeste.
+                        No ano de 2017 o Vestibular Cidadão continuou com o sucesso dos anos anteriores e teve uma aprovação recorde nos Vestibulares das Universidades Publicas não apenas do Estado de Pernambuco, mas também de todo o Nordeste.
                         O projeto fez parte da aprovação de alunos nos mais diversos cursos, sejam eles concorridos ou não. Fizemos parte da realização do sonho de muitos estudantes que é entrar em uma Universidade Pública de qualidade.
                     </h5>
                     <br>
                 </div>
             </div>
-            <br/><br/>
         </div>
     </div>
 
     <div class="section text-center" id="time-line">
+
+        <app-saparator color="blue" position="left"></app-saparator>
+            
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mr-auto ml-auto">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
                     <h2 class="title">Faça parte dessa família<br>
                     Saiba quais são os critérios para participar!</h2>                    
                     
                     <ng2-timeline [data]="timelineData"></ng2-timeline>
                     <br>
                 </div>
-            </div>
-            <br/><br/>
+            </div>            
         </div>
+
+        
     </div>
+
     <div class="section landing-section section-dark" id="contact-form">
+            
         <div class="container">
             <div class="row">
-                <div class="col-md-8 mr-auto ml-auto">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
                     <h2 class="text-center">TEVE ALGUM PROBLEMA COM SEU NOME, NÚMERO DE INSCRIÇÃO OU COM SEU LOCAL DE PROVA?</h2>
                     <h2 class="text-center">ENVIE UMA MENSAGEM QUE IREMOS TE AJUDAR!</h2>
                     
@@ -68,7 +74,7 @@
                                     <span class="input-group-addon">
                                         <i class="nc-icon nc-single-02"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Name">
+                                    <input [(ngModel)]="contact_form.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Nome">
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -77,7 +83,7 @@
                                     <span class="input-group-addon">
                                         <i class="nc-icon nc-email-85"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input [(ngModel)]="contact_form.subject" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                             <div class="col-md-12">
@@ -86,20 +92,51 @@
                                     <span class="input-group-addon">
                                         <i class="nc-icon nc-email-85"></i>
                                     </span>
-                                    <input type="text" class="form-control" placeholder="Email">
+                                    <input [(ngModel)]="contact_form.email" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Email">
                                 </div>
                             </div>
                         </div>
                         <label>Menssagem</label>
-                        <textarea class="form-control" style="resize: none;" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
+                        <textarea [(ngModel)]="contact_form.message" [ngModelOptions]="{standalone: true}" class="form-control" style="resize: none;" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
                         <div class="row">
                             <div class="col-md-12 text-center">
-                                <button class="btn btn-danger btn-round">Send Message</button>
+
+                                <button (click)="sendMail()" *ngIf="status_email.pre_send" class="btn btn-danger btn-round">Enviar</button>
+                                <button *ngIf="status_email.sending" class="btn btn-danger disabled btn-round">Enviando...</button>
+                                <button (click)="sendMail()" *ngIf="status_email.error_send" class="btn animated shake btn-danger btn-round">Enviar</button>
+                                <button *ngIf="status_email.send" class="btn btn-success disabled btn-round">Enviado</button>
+                                
+
                             </div>
                         </div>
                     </form>
                 </div>
             </div>
         </div>
+
+        
     </div>
+
+    
+
+    <div class="section">
+        <div class="container-fluid">
+            <div class="row">
+                    <app-saparator color="purple" final=true position="bottom"></app-saparator>
+                    
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sec">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <app-maps></app-maps>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </div>

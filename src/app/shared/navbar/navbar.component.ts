@@ -10,7 +10,9 @@ export class NavbarComponent implements OnInit {
     private toggleButton: any;
     private sidebarVisible: boolean;
 
-    constructor(public location: Location, private element : ElementRef) {
+    constructor(
+        private location: Location, 
+        private element : ElementRef) {
         this.sidebarVisible = false;
     }
 
@@ -18,6 +20,7 @@ export class NavbarComponent implements OnInit {
         const navbar: HTMLElement = this.element.nativeElement;
         this.toggleButton = navbar.getElementsByClassName('navbar-toggler')[0];
     }
+
     sidebarOpen() {
         const toggleButton = this.toggleButton;
         const html = document.getElementsByTagName('html')[0];
@@ -31,6 +34,7 @@ export class NavbarComponent implements OnInit {
 
         this.sidebarVisible = true;
     };
+
     sidebarClose() {
         const html = document.getElementsByTagName('html')[0];
         // console.log(html);
@@ -38,6 +42,7 @@ export class NavbarComponent implements OnInit {
         this.sidebarVisible = false;
         html.classList.remove('nav-open');
     };
+
     sidebarToggle() {
         // const toggleButton = this.toggleButton;
         // const body = document.getElementsByTagName('body')[0];
@@ -56,6 +61,17 @@ export class NavbarComponent implements OnInit {
         }
         else {
             return false;
+        }
+    }
+
+    isSplendi() {
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+
+        if( titlee === '/spinnesplendi' ) {
+            return false;
+        }
+        else {
+            return true;
         }
     }
     
