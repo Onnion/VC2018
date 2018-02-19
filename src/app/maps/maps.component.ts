@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MapTypeStyle, MapTypeStyler } from '@agm/core/services/google-maps-types';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-maps',
@@ -7,170 +8,178 @@ import { MapTypeStyle, MapTypeStyler } from '@agm/core/services/google-maps-type
   styleUrls: ['./maps.component.css']
 })
 export class MapsComponent implements OnInit {
-  lat: number = -8.0573493;
-  lng: number = -34.8835407;
-  style =  [{"elementType": "geometry",
-  "stylers": [
+
+  @Input('lat') lat: any;
+  @Input('lng') lng: any;
+
+  style = [{
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#f5f5f5"
+        }
+      ]
+    },
     {
-      "color": "#f5f5f5"
-    }
-  ]
-},
-{
-  "elementType": "labels.icon",
-  "stylers": [
+      "elementType": "labels.icon",
+      "stylers": [
+        {
+          "visibility": "off"
+        }
+      ]
+    },
     {
-      "visibility": "off"
-    }
-  ]
-},
-{
-  "elementType": "labels.text.fill",
-  "stylers": [
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#616161"
+        }
+      ]
+    },
     {
-      "color": "#616161"
-    }
-  ]
-},
-{
-  "elementType": "labels.text.stroke",
-  "stylers": [
+      "elementType": "labels.text.stroke",
+      "stylers": [
+        {
+          "color": "#f5f5f5"
+        }
+      ]
+    },
     {
-      "color": "#f5f5f5"
-    }
-  ]
-},
-{
-  "featureType": "administrative.land_parcel",
-  "elementType": "labels.text.fill",
-  "stylers": [
+      "featureType": "administrative.land_parcel",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#bdbdbd"
+        }
+      ]
+    },
     {
-      "color": "#bdbdbd"
-    }
-  ]
-},
-{
-  "featureType": "poi",
-  "elementType": "geometry",
-  "stylers": [
+      "featureType": "poi",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#eeeeee"
+        }
+      ]
+    },
     {
-      "color": "#eeeeee"
-    }
-  ]
-},
-{
-  "featureType": "poi",
-  "elementType": "labels.text.fill",
-  "stylers": [
+      "featureType": "poi",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#757575"
+        }
+      ]
+    },
     {
-      "color": "#757575"
-    }
-  ]
-},
-{
-  "featureType": "poi.park",
-  "elementType": "geometry",
-  "stylers": [
+      "featureType": "poi.park",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#e5e5e5"
+        }
+      ]
+    },
     {
-      "color": "#e5e5e5"
-    }
-  ]
-},
-{
-  "featureType": "poi.park",
-  "elementType": "labels.text.fill",
-  "stylers": [
+      "featureType": "poi.park",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#9e9e9e"
+        }
+      ]
+    },
     {
-      "color": "#9e9e9e"
-    }
-  ]
-},
-{
-  "featureType": "road",
-  "elementType": "geometry",
-  "stylers": [
+      "featureType": "road",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#ffffff"
+        }
+      ]
+    },
     {
-      "color": "#ffffff"
-    }
-  ]
-},
-{
-  "featureType": "road.arterial",
-  "elementType": "labels.text.fill",
-  "stylers": [
+      "featureType": "road.arterial",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#757575"
+        }
+      ]
+    },
     {
-      "color": "#757575"
-    }
-  ]
-},
-{
-  "featureType": "road.highway",
-  "elementType": "geometry",
-  "stylers": [
+      "featureType": "road.highway",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#dadada"
+        }
+      ]
+    },
     {
-      "color": "#dadada"
-    }
-  ]
-},
-{
-  "featureType": "road.highway",
-  "elementType": "labels.text.fill",
-  "stylers": [
+      "featureType": "road.highway",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#616161"
+        }
+      ]
+    },
     {
-      "color": "#616161"
-    }
-  ]
-},
-{
-  "featureType": "road.local",
-  "elementType": "labels.text.fill",
-  "stylers": [
+      "featureType": "road.local",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#9e9e9e"
+        }
+      ]
+    },
     {
-      "color": "#9e9e9e"
-    }
-  ]
-},
-{
-  "featureType": "transit.line",
-  "elementType": "geometry",
-  "stylers": [
+      "featureType": "transit.line",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#e5e5e5"
+        }
+      ]
+    },
     {
-      "color": "#e5e5e5"
-    }
-  ]
-},
-{
-  "featureType": "transit.station",
-  "elementType": "geometry",
-  "stylers": [
+      "featureType": "transit.station",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#eeeeee"
+        }
+      ]
+    },
     {
-      "color": "#eeeeee"
-    }
-  ]
-},
-{
-  "featureType": "water",
-  "elementType": "geometry",
-  "stylers": [
+      "featureType": "water",
+      "elementType": "geometry",
+      "stylers": [
+        {
+          "color": "#6372ac"
+        }
+      ]
+    },
     {
-      "color": "#6372ac"
+      "featureType": "water",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        {
+          "color": "#9e9e9e"
+        }
+      ]
     }
-  ]
-},
-{
-  "featureType": "water",
-  "elementType": "labels.text.fill",
-  "stylers": [
-    {
-      "color": "#9e9e9e"
-    }
-  ]
-}
-];
+  ];
 
   constructor() { }
 
   ngOnInit() {
+    this.lat = parseFloat(this.lat);
+    this.lng = parseFloat(this.lng);
+    
+    console.log(typeof this.lat);
+    console.log(this.lng);
   }
 
 }

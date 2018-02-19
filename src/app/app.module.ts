@@ -22,6 +22,7 @@ import { SaparatorComponent } from './saparator/saparator.component';
 //LIBS
 import { Ng2Timeline } from 'ng2-timeline';
 import { AgmCoreModule } from '@agm/core';
+import { EditalComponent } from './edital/edital.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AgmCoreModule } from '@agm/core';
     SpinnesplendiComponent,
     RegistryComponent,
     SaparatorComponent,
-    MapsComponent
+    MapsComponent,
+    EditalComponent
   ],
   imports: [
     BrowserModule,

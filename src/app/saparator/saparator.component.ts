@@ -8,9 +8,9 @@ import { Component, OnInit, Input, HostBinding } from '@angular/core';
 export class SaparatorComponent implements OnInit {
 
   @Input('color') color: string;
-
   @Input('position') position: string;
   @Input('final') final: boolean;
+  @Input('old') old: boolean;
   
   public classSeparator: String;
 
@@ -20,7 +20,12 @@ export class SaparatorComponent implements OnInit {
     if(this.final){
       this.classSeparator = 'final';
     }else{
-      this.classSeparator = this.color + ' ' + this.position;
+      if(this.old){
+        this.classSeparator = 'old';
+      }
+      else{
+        this.classSeparator = this.color + ' ' + this.position;        
+      }
     }
   }
 

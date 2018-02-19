@@ -7,6 +7,7 @@ import { LandingComponent } from './landing/landing.component';
 import { OldTestesComponent } from './old-testes/old-testes.component';
 import { SpinnesplendiComponent } from './spinnesplendi/spinnesplendi.component';
 import { RegistryComponent } from './registry/registry.component';
+import { EditalComponent } from 'app/edital/edital.component';
 
 
 const routes: Routes =[

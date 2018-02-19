@@ -67,3 +67,13 @@
     border-right-color: #639ec0;
     opacity: 1;
 }
+.old{
+    width: 0;
+    height: 0;
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    border: 25vw solid transparent;
+    border-left-color: #639ec0;
+    opacity: 1;
+}

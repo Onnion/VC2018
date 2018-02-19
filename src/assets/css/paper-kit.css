@@ -6555,6 +6555,10 @@ textarea.form-control {
     min-height: 40vh !important;
 }
 
+.page-header.page-header-md {
+    min-height: 60vh !important;
+}
+
 .page-header.section-dark .content-center,
 .page-header.section-dark .category-absolute {
     z-index: 1;
