@@ -11,7 +11,8 @@ export class MapsComponent implements OnInit {
 
   @Input('lat') lat: any;
   @Input('lng') lng: any;
-
+  @Input('title') title: any;
+  
   style = [{
       "elementType": "geometry",
       "stylers": [

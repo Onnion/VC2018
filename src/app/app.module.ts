@@ -5,6 +5,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app.routing';
 import { HttpModule } from '@angular/http';
+import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from '@angular/common';
 
 //PAGES
 import { AppComponent } from './app.component';
@@ -23,6 +24,8 @@ import { SaparatorComponent } from './saparator/saparator.component';
 import { Ng2Timeline } from 'ng2-timeline';
 import { AgmCoreModule } from '@agm/core';
 import { EditalComponent } from './edital/edital.component';
+import { GaleryComponent } from './galery/galery.component';
+import { ContactComponent } from './contact/contact.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,9 @@ import { EditalComponent } from './edital/edital.component';
     RegistryComponent,
     SaparatorComponent,
     MapsComponent,
-    EditalComponent
+    EditalComponent,
+    GaleryComponent,
+    ContactComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +54,10 @@ import { EditalComponent } from './edital/edital.component';
       apiKey: 'AIzaSyDhrQfYI21HF75zwp7GXJ3OQZ38KaAmUbs'
     })
   ],
-  providers: [],
+  providers: [
+    { provide: APP_BASE_HREF, useValue: '/' },
+    { provide: LocationStrategy, useClass: HashLocationStrategy }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

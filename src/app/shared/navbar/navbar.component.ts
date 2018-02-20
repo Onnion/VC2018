@@ -56,7 +56,7 @@ export class NavbarComponent implements OnInit {
     isLanding() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '/landing' ) {
+        if( titlee === '/home' ) {
             return true;
         }
         else {
@@ -74,16 +74,6 @@ export class NavbarComponent implements OnInit {
             return true;
         }
     }
-    
-    isDocumentation() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-        if( titlee === '/documentation' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
 
     isOldTests() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
@@ -96,10 +86,21 @@ export class NavbarComponent implements OnInit {
         }
     }
 
+    isGalery() {
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+
+        if( titlee === '/fotos' ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
     isRegistry() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '/registry' ) {
+        if( titlee === '/matricula' ) {
             return true;
         }
         else {

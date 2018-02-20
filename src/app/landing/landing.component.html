@@ -57,72 +57,13 @@
         
     </div>
 
-    <div class="section landing-section section-dark" id="contact-form">
-            
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 mr-auto ml-auto box-temp">
-                    <h2 class="text-center">TEVE ALGUM PROBLEMA COM SEU NOME, NÚMERO DE INSCRIÇÃO OU COM SEU LOCAL DE PROVA?</h2>
-                    <h2 class="text-center">ENVIE UMA MENSAGEM QUE IREMOS TE AJUDAR!</h2>
-                    
-                    <form class="contact-form">
-                        <div class="row">
-                            <div class="col-md-6">
-                                <label>Nome</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="nc-icon nc-single-02"></i>
-                                    </span>
-                                    <input [(ngModel)]="contact_form.name" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Nome">
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <label>Assunto</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="nc-icon nc-email-85"></i>
-                                    </span>
-                                    <input [(ngModel)]="contact_form.subject" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <label>Email</label>
-                                <div class="input-group">
-                                    <span class="input-group-addon">
-                                        <i class="nc-icon nc-email-85"></i>
-                                    </span>
-                                    <input [(ngModel)]="contact_form.email" [ngModelOptions]="{standalone: true}" type="text" class="form-control" placeholder="Email">
-                                </div>
-                            </div>
-                        </div>
-                        <label>Menssagem</label>
-                        <textarea [(ngModel)]="contact_form.message" [ngModelOptions]="{standalone: true}" class="form-control" style="resize: none;" rows="4" placeholder="Tell us your thoughts and feelings..."></textarea>
-                        <div class="row">
-                            <div class="col-md-12 text-center">
+    <app-contact></app-contact>
 
-                                <button (click)="sendMail()" *ngIf="status_email.pre_send" class="btn btn-danger btn-round">Enviar</button>
-                                <button *ngIf="status_email.sending" class="btn btn-danger disabled btn-round">Enviando...</button>
-                                <button (click)="sendMail()" *ngIf="status_email.error_send" class="btn animated shake btn-danger btn-round">Enviar</button>
-                                <button *ngIf="status_email.send" class="btn btn-success disabled btn-round">Enviado</button>
-                                
-
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        
-    </div>
-
-    
 
     <div class="section">
         <div class="container-fluid">
             <div class="row">
                     <app-saparator color="purple" final=true position="bottom"></app-saparator>
-                    
             </div>
         </div>
     </div>
@@ -131,8 +72,8 @@
     <div class="sec">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12">
-                    <app-maps lat=-8.0573493 lng=-34.8835407></app-maps>
+                <div class="col-md-12" style="padding: 0">
+                    <app-maps lat=-8.0573493 lng=-34.8835407 title="Vestibular Cidadão"></app-maps>
                 </div>
             </div>
         </div>
