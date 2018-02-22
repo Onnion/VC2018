@@ -9,24 +9,23 @@ import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy} fr
 
 //PAGES
 import { AppComponent } from './app.component';
-import { LandingComponent } from './landing/landing.component';
-import { OldTestesComponent } from './old-testes/old-testes.component';
-import { SpinnesplendiComponent } from './spinnesplendi/spinnesplendi.component';
-import { MapsComponent } from './maps/maps.component';
-import { RegistryComponent } from './registry/registry.component';
+import { LandingComponent } from './components/pages/landing/landing.component';
+import { OldTestesComponent } from './components/pages/old-testes/old-testes.component';
+import { SpinnesplendiComponent } from './components/pages/spinnesplendi/spinnesplendi.component';
+import { RegistryComponent } from './components/pages/registry/registry.component';
+import { GaleryComponent } from './components/pages/galery/galery.component';
 
 //COMPONENTS
-import { FooterComponent } from './shared/footer/footer.component';
-import { NavbarComponent } from './shared/navbar/navbar.component';
-import { SaparatorComponent } from './saparator/saparator.component';
+import { FooterComponent } from './components/shared/footer/footer.component';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { SaparatorComponent } from './components/saparator/saparator.component';
+import { MapsComponent } from './components/maps/maps.component';
+import { PreloadComponent } from './components/preload/preload.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 //LIBS
 import { Ng2Timeline } from 'ng2-timeline';
 import { AgmCoreModule } from '@agm/core';
-import { EditalComponent } from './edital/edital.component';
-import { GaleryComponent } from './galery/galery.component';
-import { ContactComponent } from './contact/contact.component';
-import { PreloadComponent } from './preload/preload.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +38,6 @@ import { PreloadComponent } from './preload/preload.component';
     RegistryComponent,
     SaparatorComponent,
     MapsComponent,
-    EditalComponent,
     GaleryComponent,
     ContactComponent,
     PreloadComponent

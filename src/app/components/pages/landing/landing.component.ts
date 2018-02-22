@@ -1,6 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http } from '@angular/http';
-import { PreloadComponent } from 'app/preload/preload.component';
 
 @Component({
   selector: 'app-landing',

@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { PreloadComponent } from 'app/preload/preload.component';
+import { PreloadComponent } from './../../preload/preload.component';
 
 declare const $: any;
 declare const MaterialPhotoGallery: any;
