@@ -26,6 +26,7 @@ import { AgmCoreModule } from '@agm/core';
 import { EditalComponent } from './edital/edital.component';
 import { GaleryComponent } from './galery/galery.component';
 import { ContactComponent } from './contact/contact.component';
+import { PreloadComponent } from './preload/preload.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ContactComponent } from './contact/contact.component';
     MapsComponent,
     EditalComponent,
     GaleryComponent,
-    ContactComponent
+    ContactComponent,
+    PreloadComponent
   ],
   imports: [
     BrowserModule,

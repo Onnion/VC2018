@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { Http } from '@angular/http';
+import { PreloadComponent } from 'app/preload/preload.component';
 
 @Component({
   selector: 'app-landing',
@@ -8,16 +9,11 @@ import { Http } from '@angular/http';
 })
 
 export class LandingComponent implements OnInit {
-
   
+  constructor(){}
 
-  
-
-  constructor(
-   
-  ) { }
-
-  ngOnInit() { }
+  ngOnInit() { 
+  }
 
   public timelineData: Array<Object> = [
     {

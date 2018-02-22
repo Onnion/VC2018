@@ -4,7 +4,7 @@ import { Location, LocationStrategy, PathLocationStrategy } from '@angular/commo
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',
-    styleUrls: ['./navbar.component.scss']
+    styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
     private toggleButton: any;
@@ -56,7 +56,7 @@ export class NavbarComponent implements OnInit {
     isLanding() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '/home' ) {
+        if( titlee === '#/home' ) {
             return true;
         }
         else {
@@ -67,7 +67,7 @@ export class NavbarComponent implements OnInit {
     isSplendi() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '/spinnesplendi' ) {
+        if( titlee === '#/spinnesplendi' ) {
             return false;
         }
         else {
@@ -78,7 +78,7 @@ export class NavbarComponent implements OnInit {
     isOldTests() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '/testes' ) {
+        if( titlee === '#/testes' ) {
             return true;
         }
         else {
@@ -89,7 +89,7 @@ export class NavbarComponent implements OnInit {
     isGalery() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '/fotos' ) {
+        if( titlee === '#/fotos' ) {
             return true;
         }
         else {
@@ -100,7 +100,7 @@ export class NavbarComponent implements OnInit {
     isRegistry() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '/matricula' ) {
+        if( titlee === '#/matricula' ) {
             return true;
         }
         else {

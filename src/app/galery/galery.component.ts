@@ -1,4 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { PreloadComponent } from 'app/preload/preload.component';
+
+declare const $: any;
+declare const MaterialPhotoGallery: any;
 
 @Component({
   selector: 'app-galery',
@@ -7,10 +11,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GaleryComponent implements OnInit {
 
-  constructor() { }
+  @ViewChild(PreloadComponent) preload: PreloadComponent;
+
+  constructor() { 
+    
+  }
 
   ngOnInit() {
-    
+    $(document).ready(function(){
+      let elem = $('.m-p-g');
+      var gallery = new MaterialPhotoGallery(elem);
+
+    });
+    setTimeout(() => {
+      this.preload.hidden();
+    }, 3000);
   }
 
 }

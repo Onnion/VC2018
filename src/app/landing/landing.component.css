@@ -18,3 +18,8 @@
     font-family: 'Archivo Black', sans-serif;
     font-size: 7em;
 }
+@media(max-width: 768px){
+    .vestibular_cidadao{
+        font-size: 5em;
+    }
+}

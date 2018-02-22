@@ -178,9 +178,6 @@ export class MapsComponent implements OnInit {
   ngOnInit() {
     this.lat = parseFloat(this.lat);
     this.lng = parseFloat(this.lng);
-    
-    console.log(typeof this.lat);
-    console.log(this.lng);
   }
 
 }
