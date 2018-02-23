@@ -18,9 +18,9 @@
         <div class="col-md-6 mr-auto ml-auto box-temp">
           <h2 class="title">Acesse agora o edital 2018</h2>
           <div class="row">
-            <div class="col-md-12 text-center">
-              <a href="https://docs.wixstatic.com/ugd/34d704_4dd36496d12743f196ef3582bd3d0728.pdf" target="_blank" class="btn btn-danger btn-round">
-                    <i class="nc-icon nc-paper"></i> Edital 2018</a>
+            <div *ngIf="edital" class="col-md-12 text-center">
+              <a [href]="edital[0].link_edital" target="_blank" class="btn btn-danger btn-round">
+                    <i class="nc-icon nc-paper"></i> {{edital[0].name_edital}}</a>
             </div>
           </div>
           <div class="section"></div>

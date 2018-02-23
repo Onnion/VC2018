@@ -16,50 +16,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-8 mr-auto ml-auto box-temp">
-                    <div class="container section-inner-padding">
+                    <div *ngIf="rows" class="container section-inner-padding">
 
-                        <div class="row">
+                        <div *ngFor="let row of rows" class="row" style="padding-bottom: 20px">
                             <div class="col-md-12 text-center">
-                                <a href="https://docs.wixstatic.com/ugd/34d704_cbb04c4654b04f868f82130638b3cf7d.pdf" target="_blank" class="btn btn-danger btn-round">
-                                    <i class="nc-icon nc-paper"></i> Processo Seletivo 2017</a>
-                                <a href="https://docs.wixstatic.com/ugd/34d704_017842c845a1435994e08b27770ca53e.pdf" target="_blank" class="btn btn-danger btn-round">
-                                    <i class="nc-icon nc-paper"></i> Gabarito</a>
-                            </div>
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <a href="https://docs.wixstatic.com/ugd/34d704_4dd36496d12743f196ef3582bd3d0728.pdf" target="_blank" class="btn btn-danger btn-round">
-                                    <i class="nc-icon nc-paper"></i> Processo Seletivo 2016</a>
-                                <a href="https://docs.wixstatic.com/ugd/34d704_cc8971bfd2534389a1def7818b326812.pdf" target="_blank" class="btn btn-danger btn-round">
-                                    <i class="nc-icon nc-paper"></i> Gabarito</a>
-                            </div>
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <a href="https://docs.wixstatic.com/ugd/34d704_e0e5bd672edb4ac6ac426c090e377dd5.pdf" target="_blank" class="btn btn-danger btn-round">
-                                    <i class="nc-icon nc-paper"></i> Processo Seletivo 2015</a>
-                                <a href="https://docs.wixstatic.com/ugd/34d704_7518394cd2fb4fcbb1e4757c79a3d411.pdf" target="_blank" class="btn btn-danger btn-round">
-                                    <i class="nc-icon nc-paper"></i> Gabarito</a>
-                            </div>
-                        </div>
-
-                        <br>
-                        <br>
-
-                        <div class="row">
-                            <div class="col-md-12 text-center">
-                                <a href="https://docs.wixstatic.com/ugd/34d704_df1b84d639224098a783452f18cea746.pdf" target="_blank" class="btn btn-danger btn-round">
-                                    <i class="nc-icon nc-paper"></i> Processo Seletivo 2014</a>
-                                <a href="https://docs.wixstatic.com/ugd/34d704_6c35c384f9884012a4e5144c0a9fac7f.pdf" target="_blank" class="btn btn-danger btn-round">
-                                    <i class="nc-icon nc-paper"></i> Gabarito</a>
+                                <a [href]="row.link_prova" target="_blank" class="btn btn-danger btn-round">
+                                    <i class="nc-icon nc-paper"></i> {{row.name_prova}}</a>
+                                <a [href]="row.link_gabarito" target="_blank" class="btn btn-danger btn-round">
+                                    <i class="nc-icon nc-paper"></i> {{row.name_gabarito}}</a>
                             </div>
                         </div>
 
