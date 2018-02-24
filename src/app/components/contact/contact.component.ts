@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Http } from '@angular/http';
+import { environment } from './../../../environments/environment';
 
 @Component({
   selector: 'app-contact',
@@ -8,8 +9,7 @@ import { Http } from '@angular/http';
 })
 export class ContactComponent implements OnInit {
   
-  private API_URL_DEV = 'http://localhost:3000/api/';
-  private API_URL = 'https://vc-2018-api.herokuapp.com/api/';
+  private API_URL = environment.API_URL;
   
   public contact_form = {
     'name': null,
@@ -38,7 +38,7 @@ export class ContactComponent implements OnInit {
     
           this.status_email.pre_send = false;
           this.status_email.sending = true;
-          this.http.post(this.API_URL_DEV + 'email', this.contact_form).subscribe((result: any) => {
+          this.http.post(this.API_URL + 'email', this.contact_form).subscribe((result: any) => {
             this.status_email.sending = false;
             this.status_email.send = true;
     

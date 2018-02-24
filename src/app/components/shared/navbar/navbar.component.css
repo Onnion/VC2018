@@ -1,15 +1,31 @@
+.navbar .navbar-brand{
+    padding: 0!important;
+    
+}
+
+
 @media(max-width: 991px){
     .navbar-brand img{
-        width: 43%!important;
+        width: 30%!important; 
+        
     }
     
     .navbar .navbar-brand{
-        padding: 5px 15px!important;
-        width: 43%!important;
+        width: 43%!important; 
+        padding: 0!important;
+        
     }
     
 }
 
+@media(max-width: 767px){
+    .navbar .navbar-brand{
+        width: 43%!important; 
+        padding: 15px!important;
+        
+    }
+    
+}
 @media(max-width: 450px){
     .navbar-brand img{
         width: 43%!important;

@@ -12,7 +12,7 @@ const routes: Routes =[
     { path: 'spinnesplendi', component:  SpinnesplendiComponent    },    
     { path: 'testes',        component:  OldTestesComponent        },  
     { path: 'home',          component:  LandingComponent          },
-    { path: 'matricula',     component:  RegistryComponent         },    
+    { path: 'inscricao',     component:  RegistryComponent         },    
     { path: 'fotos',         component:  GaleryComponent         },    
     { path: '',              redirectTo: 'home', pathMatch: 'full' }
 ];

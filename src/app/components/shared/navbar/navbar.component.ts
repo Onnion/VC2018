@@ -100,7 +100,7 @@ export class NavbarComponent implements OnInit {
     isRegistry() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '#/matricula' ) {
+        if( titlee === '#/inscricao' ) {
             return true;
         }
         else {
