@@ -38,6 +38,9 @@ jspm_packages/
 documentation/
 .vscode/
 dist/
+e2e/
+.idea/
+
 # Typescript v1 declaration files
 typings/
 

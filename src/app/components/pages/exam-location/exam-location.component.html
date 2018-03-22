@@ -1,0 +1,36 @@
+<div class="page-header page-header-md" data-parallax="true" style="background: url('assets/img/background 1.jpg'); background-size: cover;">
+  <div class="filter"></div>
+  <div class="container">
+    <div class="motto text-center">
+      <h1 class="vestibular_cidadao">Locais de prova 2018</h1>
+      <br />
+    </div>
+  </div>
+</div>
+
+<div class="main" style="min-height: 400px;">
+
+  <div class="section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 mr-auto ml-auto box-temp">
+          <h2 class="title">Acesse agora o seu local de prova</h2>
+          <div class="row">
+            <div *ngIf="exam_location" class="col-md-12 text-center">
+              <a [href]="exam_location[0].link_exam_location" target="_blank" class="btn btn-danger btn-round">
+                <i class="nc-icon nc-paper"></i> 
+                {{exam_location[0].name_exam_location}}
+              </a>
+            </div>
+          </div>
+          <div class="section"></div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="section"></div>
+
+</div>

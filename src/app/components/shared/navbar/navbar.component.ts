@@ -78,7 +78,7 @@ export class NavbarComponent implements OnInit {
     isOldTests() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
 
-        if( titlee === '#/testes' ) {
+        if( titlee === '#/provas' ) {
             return true;
         }
         else {
@@ -96,6 +96,19 @@ export class NavbarComponent implements OnInit {
             return false;
         }
     }
+
+
+    isExamLocation() {
+        var titlee = this.location.prepareExternalUrl(this.location.path());
+
+        if( titlee === '#/local/prova' ) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
 
     isRegistry() {
         var titlee = this.location.prepareExternalUrl(this.location.path());
