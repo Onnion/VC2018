@@ -16,10 +16,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-6 mr-auto ml-auto box-temp">
-          <h2 class="title">Acesse agora o edital 2018</h2>
+          <h2 class="title">Inscrições encerradas</h2>
           <div class="row">
-            <div *ngIf="edital" class="col-md-12 text-center">
-              <a [href]="edital[0].link_edital" target="_blank" class="btn btn-danger btn-round">
+            <div class="col-md-12 text-center">
+              <a [href]="edital[0].link_edital" target="_blank" class="btn btn-danger disabled btn-round">
                     <i class="nc-icon nc-paper"></i> {{edital[0].name_edital}}</a>
             </div>
           </div>

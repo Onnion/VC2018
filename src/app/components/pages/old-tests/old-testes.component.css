@@ -23,6 +23,16 @@
     
 }
 
+.btn-provi{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.281)!important;
+}  
+    
+.btn-provi:hover{
+    transform: translateY(-1px);
+    box-shadow: 0px 10px 20px rgba(251, 198, 88, .281)!important;
+}    
+
+
 @media(max-width: 768px){
     .vestibular_cidadao{
         font-size: 5em;
