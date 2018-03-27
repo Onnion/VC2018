@@ -33,7 +33,6 @@
                         </div>
                     </div>
                     <div *ngIf="rows" class="container section-inner-padding">
-
                         <div *ngFor="let row of rows" class="row" style="padding-bottom: 20px">
                             <div class="col-md-12 text-center">
                                 <div class="row">
@@ -44,15 +43,26 @@
                                     </div>
                                     <div class="col-md-6 col-gabarito">
                                             <a [href]="row.link_gabarito" target="_blank" class="btn btn-danger btn-round">          
-                                                    <i class="nc-icon nc-paper"></i> {{row.name_gabarito}}
-                                                </a>
+                                                <i class="nc-icon nc-paper"></i> {{row.name_gabarito}}
+                                            </a>
                                     </div>
                                 </div>
-                                
-                               
                             </div>
                         </div>
-
+                    </div>
+                    <div *ngIf="!rows" class="container section-inner-padding">
+                        <div class="row" style="padding-bottom: 20px">
+                            <div class="col-md-12 text-center">
+                                <div class="row">
+                                    <div class="col-md-12 text-center">
+                                        <p class="btn btn-danger btn-round disabled">
+                                            <i class="nc-icon nc-paper"></i> Carregando...
+                                        </p>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
