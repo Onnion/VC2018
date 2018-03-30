@@ -15,6 +15,8 @@ import { SpinnesplendiComponent } from './components/pages/spinnesplendi/spinnes
 import { RegistryComponent      } from './components/pages/registry/registry.component';
 import { GaleryComponent        } from './components/pages/galery/galery.component';
 import { ExamLocationComponent  } from './components/pages/exam-location/exam-location.component';
+import { AprovedsComponent      } from './components/pages/aproveds/aproveds.component';
+import { MatriculaComponent     } from './components/pages/matricula/matricula.component';
 
 //COMPONENTS
 import { FooterComponent    } from './components/shared/footer/footer.component';
@@ -25,8 +27,8 @@ import { PreloadComponent   } from './components/preload/preload.component';
 import { ContactComponent   } from './components/contact/contact.component';
 
 //LIBS
-import { Ng2Timeline           } from 'ng2-timeline';
-import { AgmCoreModule         } from '@agm/core';
+import { Ng2Timeline   } from 'ng2-timeline';
+import { AgmCoreModule } from '@agm/core';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { AgmCoreModule         } from '@agm/core';
     GaleryComponent,
     ContactComponent,
     PreloadComponent,
-    ExamLocationComponent
+    ExamLocationComponent,
+    AprovedsComponent,
+    MatriculaComponent
   ],
   imports: [
     BrowserModule,

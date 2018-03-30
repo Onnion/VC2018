@@ -18,8 +18,26 @@
     font-family: 'Archivo Black', sans-serif;
     font-size: 7em;
 }
+
+.title_aproveds{
+    text-align: center;
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 5em;
+}
+
 @media(max-width: 768px){
     .vestibular_cidadao{
         font-size: 5em;
+    }
+    .title_aproveds{
+        text-align: center;
+        font-family: 'Archivo Black', sans-serif;
+        font-size: 3em;
+    }
+}
+
+@Media (max-width: 575px) {
+    .box-temp{
+        box-shadow:none!important;
     }
 }

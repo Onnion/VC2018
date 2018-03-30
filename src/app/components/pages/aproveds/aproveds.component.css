@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+@import url('https://fonts.googleapis.com/css?family=Raleway:700');
+
+.vestibular_cidadao{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 7em;
+}
+
+.title{
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+.aproved_row{
+    width: 100%;
+    cursor: pointer;
+}
+.documentation_aux{
+    display: none;
+}
+.documentation{
+    text-align: center;
+}
+.documentation a,
+.documentation_link{
+    color: #fff!important;
+    border-radius: 25px; 
+    padding: 10px 25px;
+    background: #f5593d!important;
+    box-shadow: 0px 8px 15px rgba(255, 92, 63, 0.281);
+    visibility: hidden;
+}
+
+.aproved_row:hover .documentation a{
+    background: green;
+    visibility: visible;
+}
+.title_aproveds{
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .documentation{
+        display: none;
+    }
+    .documentation_aux,
+    .documentation_link{
+        visibility: visible;
+        display: block;
+    }
+    .vestibular_cidadao {
+        font-size: 5em;
+}
+}
