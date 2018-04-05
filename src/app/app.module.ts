@@ -17,6 +17,7 @@ import { GaleryComponent        } from './components/pages/galery/galery.compone
 import { ExamLocationComponent  } from './components/pages/exam-location/exam-location.component';
 import { AprovedsComponent      } from './components/pages/aproveds/aproveds.component';
 import { MatriculaComponent     } from './components/pages/matricula/matricula.component';
+import { RelocatedComponent     } from './components/pages/relocated/relocated.component';
 
 //COMPONENTS
 import { FooterComponent    } from './components/shared/footer/footer.component';
@@ -46,7 +47,8 @@ import { AgmCoreModule } from '@agm/core';
     PreloadComponent,
     ExamLocationComponent,
     AprovedsComponent,
-    MatriculaComponent
+    MatriculaComponent,
+    RelocatedComponent
   ],
   imports: [
     BrowserModule,

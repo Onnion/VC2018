@@ -16,7 +16,7 @@
 
 @media (max-width: 1200px) and (min-width: 992px) {
     .navbar .navbar-nav .nav-item .nav-link {
-        font-size: 10px;
+        font-size: 9px;
     }
     
     
@@ -58,7 +58,7 @@
 
 @media (max-width: 666px) {
     #exam_location_link{
-        width: 80%;
+        width: 85%;
     }
         
 }

@@ -53,82 +53,10 @@ export class NavbarComponent implements OnInit {
         }
     };
     
-    isLanding() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
+    isToShow (path) {
+        const url_path  = this.location.prepareExternalUrl(this.location.path());
+        const link_path = `#/${path}` 
 
-        if( titlee === '#/home' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    isSplendi() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-
-        if( titlee === '#/spinnesplendi' ) {
-            return false;
-        }
-        else {
-            return true;
-        }
-    }
-
-    isOldTests() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-
-        if( titlee === '#/provas' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    isGalery() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-
-        if( titlee === '#/fotos' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-
-    isExamLocation() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-
-        if( titlee === '#/local/prova' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-
-    isRegistry() {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-
-        if( titlee === '#/inscricao' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-
-    isAproveds () {
-        var titlee = this.location.prepareExternalUrl(this.location.path());
-        
-        if( titlee === '#/aprovados/lista' ) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return !(url_path === link_path);
     }
 }

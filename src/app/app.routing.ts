@@ -10,17 +10,19 @@ import { MatriculaComponent     } from './components/pages/matricula/matricula.c
 import { GaleryComponent        } from './components/pages/galery/galery.component';
 import { ExamLocationComponent  } from './components/pages/exam-location/exam-location.component';
 import { AprovedsComponent      } from './components/pages/aproveds/aproveds.component';
+import { RelocatedComponent     } from './components/pages/relocated/relocated.component';
 
 const routes: Routes = [
-    { path: 'aprovados/lista', component:  AprovedsComponent         },  
-    { path: 'local/prova',     component:  ExamLocationComponent     },
-    { path: 'spinnesplendi',   component:  SpinnesplendiComponent    },
-    { path: 'provas',          component:  OldTestesComponent        },
-    { path: 'home',            component:  LandingComponent          },
-    { path: 'matricula',       component:  MatriculaComponent        },
-    { path: 'inscricao',       component:  RegistryComponent         },    
-    { path: 'fotos',           component:  GaleryComponent           },
-    { path: '',                redirectTo: 'home', pathMatch: 'full' }
+    { path: 'aprovados/lista',   component:  AprovedsComponent         },  
+    { path: 'local/prova',       component:  ExamLocationComponent     },
+    { path: 'spinnesplendi',     component:  SpinnesplendiComponent    },
+    { path: 'provas',            component:  OldTestesComponent        },
+    { path: 'home',              component:  LandingComponent          },
+    { path: 'remanejados/lista', component:  RelocatedComponent        },
+    { path: 'matricula',         component:  MatriculaComponent        },
+    { path: 'inscricao',         component:  RegistryComponent         },    
+    { path: 'fotos',             component:  GaleryComponent           },
+    { path: '',                  redirectTo: 'home', pathMatch: 'full' }
 ];
 
 @NgModule({
