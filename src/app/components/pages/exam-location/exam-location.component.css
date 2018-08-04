@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+
+.vestibular_cidadao{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 7em;
+}
+
+
+.box-temp{
+    background: #fff;
+    z-index: 9;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+
+@media(max-width: 768px){
+    .vestibular_cidadao{
+        font-size: 5em;
+    }
+}

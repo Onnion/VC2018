@@ -1,0 +1,88 @@
+<div class="page-header page-header-md" data-parallax="true" style="background: url('assets/img/background 1.jpg'); background-size: cover;">
+  <div class="filter"></div>
+  <div class="container">
+    <div class="motto text-center">
+      <h1 class="vestibular_cidadao">Remanejados <br/> 2018</h1>
+      <br />
+    </div>
+  </div>
+</div>
+
+<div class="main" style="min-height: 400px;">
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center">
+          <h2 class="title_aproveds">Pesquise pelo seu nome ou número de inscrição</h2>  
+      </div>
+
+      <div class="col-md-12 text-center" style="margin-bottom: 30px;margin-top: 30px">
+          <a class="documentation_link" [routerLink]="['/matricula']">Documentação da matrícula</a>
+      </div>
+        
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col-md-12">
+        <div class="">
+            <div class="header">
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                  <form class="ngForm">
+                    <div class="input-group border-input text-danger">
+                      
+                      <input autocomplete="off" name="filter" class="form-control border-input" (keyup)="handleFilter()" (keydown)="handleFilter()" placeholder="Buscar" [(ngModel)]="filter"/>
+                            
+                      <div class="input-group-addon">
+                        <span><i class="fa fa-search"></i></span>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="content table-responsive">
+              
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                          <th style="text-align: left">
+                              Nome
+                          </th>
+                          <th></th>
+                          <th style="text-align: right">
+                              Número de inscrição
+                          </th>
+                        </tr>
+                    </thead>
+                    <tbody *ngIf="aprovedsAfterFiltred">
+
+                        <tr 
+                        class="aproved_row" 
+                        *ngFor="let aproved of aprovedsAfterFiltred"
+                        (click)="goTo()">
+                          <td style="text-align: left; color:#66615b; font-weight: 700">{{aproved.name}}</td>
+                          <td class="documentation"> <a [routerLink]="['/matricula']">documentação</a> </td>
+                          <td class="documentation_aux"></td>
+                          <td style="text-align: right;  color:#66615b; font-weight: 700">{{aproved.n_inscricao}}</td>
+                        </tr>
+                        <tr *ngIf="notAproved()">
+                          <td colspan="3" style="text-align: left" class="title">
+                            INFELIZMENTE VOCÊ NÃO FOI APROVADO(A) NO PRIMEIRO REMANEJAMENTO:( <br>
+                            ACOMPANHE OS PRÓXIMOS REMANEJAMENTOS
+                          </td>
+                        </tr>
+                        <tr *ngIf="loading">
+                          <td colspan="3" style="text-align: left">CARREGANDO LISTAGEM...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+  </div>
+  
+  <div class="section"></div>
+</div>
+

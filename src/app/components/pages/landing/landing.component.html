@@ -1,0 +1,134 @@
+
+
+<div class="page-header page-header-md" data-parallax="true" style="background: url('assets/img/background 1.jpg'); background-size: cover;">
+    <div class="filter"></div>
+    <div class="container">
+        <div class="motto text-center">
+            <h1 class="vestibular_cidadao">Vestibular Cidadão</h1>
+            <br />
+            <!-- <button type="button" class="btn btn-outline-neutral btn-round">Download</button> -->
+        </div>
+    </div>
+</div>
+<div class="main">
+
+    <div class="section text-center" id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
+                    <h2 class="title_aproveds">LISTA DE REMANEJADOS</h2>
+                    <br>
+                    
+                    <div class="col-md-12 text-center">
+                        <a [routerLink]="['/remanejados/lista']" style="cursor:pointer" class="btn btn-danger btn-round">
+                            <i class="nc-icon nc-paper"></i> 
+                            REMANEJADOS
+                        </a>
+                    </div>
+                    <br>
+                    <br>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section text-center" id="about-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
+                    <h2 class="title_aproveds">LISTA DE APROVADOS</h2>
+                    <br>
+                    
+                    <div class="col-md-12 text-center">
+                        <a [routerLink]="['/aprovados/lista']" style="cursor:pointer" class="btn btn-danger btn-round">
+                            <i class="nc-icon nc-paper"></i> 
+                            APROVADOS
+                        </a>
+                    </div>
+                    <br>
+                    <br>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section text-center" id="about-us">
+        <app-saparator color="green" position='right'></app-saparator>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
+                    <h2 class="title">Quem somos</h2>
+                    <h5 class="description">O Projeto Vestibular Cidadão é um curso pré-vestibular gratuito voltado para alunos e ex-alunos de
+                        escolas públicas e ex-bolsitas de escolar particulares de todas as idades. Objetiva preparar
+                        os estudantes para o difícil processo seletivo das universidades/faculdades, atenuando assim
+                        as diferenças estruturais entre estes e os estudantes oriundos de escolas particulares. O Vestibular
+                        Cidadão é mais que um cursinho: é uma “oficina de cidadãos”.</h5>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section text-center" id="results">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
+                    <h2 class="title">Nossos resultados</h2>
+                    <h5 class="description">
+                        No ano de 2017 o Vestibular Cidadão continuou com o sucesso dos anos anteriores e teve uma aprovação recorde nos Vestibulares
+                        das Universidades Publicas não apenas do Estado de Pernambuco, mas também de todo o Nordeste.
+                        O projeto fez parte da aprovação de alunos nos mais diversos cursos, sejam eles concorridos ou
+                        não. Fizemos parte da realização do sonho de muitos estudantes que é entrar em uma Universidade
+                        Pública de qualidade.
+                    </h5>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section text-center" id="time-line">
+
+        <app-saparator color="blue" position="left"></app-saparator>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8 mr-auto ml-auto box-temp">
+                    <h2 class="title">Faça parte dessa família
+                        <br> Saiba quais são os critérios para participar!</h2>
+
+                    <ng2-timeline [data]="timelineData"></ng2-timeline>
+                    <br>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <app-contact></app-contact>
+
+
+    <div class="section">
+        <div class="container-fluid">
+            <div class="row">
+                <app-saparator color="purple" final=true position="bottom"></app-saparator>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="sec">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12" style="padding: 0">
+                    <app-maps lat=-8.0573493 lng=-34.8835407 title="Vestibular Cidadão"></app-maps>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

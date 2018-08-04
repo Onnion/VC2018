@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Archivo+Black');
+
+.vestibular_cidadao{
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 7em;
+}
+
+.section-inner-padding{
+    padding: 70px 0px!important;
+}
+
+.box-temp{
+    background: #fff;
+    z-index: 9;
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+}
+
+.col-gabarito{
+    text-align: center;   
+}
+.col-prova{
+    text-align: right;
+    
+}
+
+.btn-provi{
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.281)!important;
+}  
+    
+.btn-provi:hover{
+    transform: translateY(-1px);
+    box-shadow: 0px 10px 20px rgba(251, 198, 88, .281)!important;
+}    
+
+
+@media(max-width: 768px){
+    .vestibular_cidadao{
+        font-size: 5em;
+    }
+
+    .col-gabarito,
+    .col-prova{
+        text-align: center;
+        
+    }
+
+}
+
+@media(max-width: 767px){
+    .col-gabarito{
+        padding-top: 5px;
+        padding-bottom: 20px;
+        
+    }
+}

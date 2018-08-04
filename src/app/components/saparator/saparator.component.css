@@ -1,0 +1,79 @@
+.final{
+    width: 100%;
+    z-index: 0;
+    position: absolute;
+    bottom: 0;
+    border: 50vw solid transparent;
+    border-bottom-color: #da7db0;
+    opacity: 1; 
+}
+.left.purple{
+    width: 0;
+    height: 0;
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    border: 40vw solid transparent;
+    border-left-color: #da7db0;
+    opacity: 1;
+}
+.left.green{
+    width: 0;
+    height: 0;
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    border: 40vw solid transparent;
+    border-left-color: #6dc88d;
+    opacity: 1;
+}
+.left.blue{
+    width: 0;
+    height: 0;
+    z-index: 0;
+    position: absolute;
+    left: 0;
+    border: 40vw solid transparent;
+    border-left-color: #639ec0;
+    opacity: 1;
+}
+.right.purple{
+    width: 0;
+    right: 0;
+    height: 0;
+    z-index: 0;
+    position: absolute;
+    border: 40vw solid transparent;
+    border-right-color: #da7db0;
+    opacity: 1;
+}
+.right.green{
+    width: 0;
+    right: 0;
+    height: 0;
+    z-index: 0;
+    position: absolute;
+    border: 40vw solid transparent;
+    border-right-color: #6dc88d;
+    opacity: .8;
+}
+.right.blue{
+    width: 0;
+    height: 0;
+    z-index: 0;
+    position: absolute;
+    right: 0;
+    border: 40vw solid transparent;
+    border-right-color: #639ec0;
+    opacity: 8;
+}
+.old{
+    width: 0;
+    height: 0;
+    z-index: 3;
+    position: absolute;
+    left: 0;
+    border: 25vw solid transparent;
+    border-left-color: #639ec0;
+    opacity: 1;
+}
