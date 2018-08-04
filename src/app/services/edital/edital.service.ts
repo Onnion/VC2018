@@ -10,11 +10,13 @@ export class EditalService {
 
   getEdital(){
     return new Promise((resolve, reject) => {
-      this._http.post(environment.API_URL + 'edital', null).subscribe((result) => {
-        resolve(result.json());
-      }, (error) => {
-        reject(error.json())
-      });
+      this._http.post(environment.API_URL + 'edital', null).subscribe(
+        (result) => {
+          resolve(result.json());
+        }, 
+        (error) => {
+          reject(error.json())
+        });
     })
   }
 
