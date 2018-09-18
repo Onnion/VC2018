@@ -2,12 +2,11 @@ import { BrowserModule    } from '@angular/platform-browser';
 import { AppRoutingModule } from './app.routing';
 import { NgModule         } from '@angular/core';
 import { FormsModule      } from '@angular/forms';
-import { NgbModule        } from '@ng-bootstrap/ng-bootstrap';
 import { RouterModule     } from '@angular/router';
-import { HttpModule       } from '@angular/http';
-import { CommonModule, APP_BASE_HREF, LocationStrategy, HashLocationStrategy} from '@angular/common';
+import {HttpClientModule, HTTP_INTERCEPTORS} from '@angular/common/http';
+import { APP_BASE_HREF, LocationStrategy, HashLocationStrategy } from '@angular/common';
 
-//PAGES
+// PAGES
 import { AppComponent           } from './app.component';
 import { LandingComponent       } from './components/pages/landing/landing.component';
 import { OldTestesComponent     } from './components/pages/old-tests/old-testes.component';
@@ -19,7 +18,7 @@ import { AprovedsComponent      } from './components/pages/aproveds/aproveds.com
 import { MatriculaComponent     } from './components/pages/matricula/matricula.component';
 import { RelocatedComponent     } from './components/pages/relocated/relocated.component';
 
-//COMPONENTS
+// COMPONENTS
 import { FooterComponent    } from './components/shared/footer/footer.component';
 import { NavbarComponent    } from './components/shared/navbar/navbar.component';
 import { SaparatorComponent } from './components/saparator/saparator.component';
@@ -27,7 +26,7 @@ import { MapsComponent      } from './components/maps/maps.component';
 import { PreloadComponent   } from './components/preload/preload.component';
 import { ContactComponent   } from './components/contact/contact.component';
 
-//LIBS
+// LIBS
 import { Ng2Timeline   } from 'ng2-timeline';
 import { AgmCoreModule } from '@agm/core';
 
@@ -52,12 +51,11 @@ import { AgmCoreModule } from '@agm/core';
   ],
   imports: [
     BrowserModule,
-    NgbModule.forRoot(),
     FormsModule,
     RouterModule,
     AppRoutingModule,
     Ng2Timeline,
-    HttpModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyDhrQfYI21HF75zwp7GXJ3OQZ38KaAmUbs'
     })

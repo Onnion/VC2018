@@ -35,7 +35,13 @@
                   <form class="ngForm">
                     <div class="input-group border-input text-danger">
                       
-                      <input autocomplete="off" name="filter" class="form-control border-input" (keyup)="handleFilter()" (keydown)="handleFilter()" placeholder="Buscar" [(ngModel)]="filter"/>
+                      <input 
+                      autocomplete="off" 
+                      name="filter" class="form-control border-input" 
+                      (keyup)="handleFilter()" 
+                      (keydown)="handleFilter()" 
+                      placeholder="Buscar" 
+                      [(ngModel)]="filter"/>
                             
                       <div class="input-group-addon">
                         <span><i class="fa fa-search"></i></span>

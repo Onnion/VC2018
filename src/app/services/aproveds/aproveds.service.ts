@@ -1,18 +1,18 @@
-import { Injectable  } from '@angular/core';
-import { Http        } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../environments/environment';
+import { Injectable } from '@angular/core';
 
 @Injectable()
 export class AprovedsService {
 
-  constructor(private _http: Http) { }
+  constructor(private _http: HttpClient) { }
 
-  getAproveds(){
+  getAproveds() {
     return new Promise((resolve, reject) => {
       this._http.post(environment.API_URL + 'aproveds', null).subscribe((result) => {
-        resolve(result.json());
+        resolve(result);
       }, (error) => {
-        reject(error.json())
+        reject(error)
       });
     })
   }

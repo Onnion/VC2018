@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-landing',
@@ -8,13 +8,10 @@ import { Http } from '@angular/http';
 })
 
 export class LandingComponent implements OnInit {
-  
-  constructor(){}
 
-  ngOnInit() { 
-  }
+  constructor() {}
 
-  public timelineData: Array<Object> = [
+  public timelineData = [
     {
       title: "Ser aluno da Rede Pública",
       icon: '<i class="fa fa-pencil"></i>',
@@ -54,5 +51,6 @@ export class LandingComponent implements OnInit {
 
   ];
 
- 
+  ngOnInit() {  }
+
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Http } from '@angular/http';
+import { HttpClient } from '@angular/common/http';
 import { environment } from './../../../environments/environment';
 
 @Component({
@@ -8,9 +8,9 @@ import { environment } from './../../../environments/environment';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent implements OnInit {
-  
+
   private API_URL = environment.API_URL;
-  
+
   public contact_form = {
     'name': null,
     'subject': null,
@@ -25,40 +25,37 @@ export class ContactComponent implements OnInit {
     'pre_send': true
   }
 
-  constructor( private http: Http) { }
-
-  ngOnInit() {
-  }
+  constructor( private http: HttpClient) { }
 
   sendMail() {
-    
-        if (
-          this.contact_form.email && this.contact_form.name &&
-          this.contact_form.message && this.contact_form.subject) {
-    
-          this.status_email.pre_send = false;
-          this.status_email.sending = true;
-          this.http.post(this.API_URL + 'email', this.contact_form).subscribe((result: any) => {
-            this.status_email.sending = false;
-            this.status_email.send = true;
-    
-            this.contact_form.email = null;
-            this.contact_form.name = null;
-            this.contact_form.subject = null;
-            this.contact_form.message = null;
-    
-          });
-    
-        } else {
-          this.status_email.pre_send = false;
-          this.status_email.error_send = true;
-          setTimeout(() => {
-            this.status_email.pre_send = true;
-            this.status_email.error_send = false;
-          },1000)
-        }
-    
-    
-    
-      }
+
+    if (
+      this.contact_form.email && this.contact_form.name &&
+      this.contact_form.message && this.contact_form.subject) {
+
+      this.status_email.pre_send = false;
+      this.status_email.sending = true;
+      this.http.post(this.API_URL + 'email', this.contact_form).subscribe((result: any) => {
+        this.status_email.sending = false;
+        this.status_email.send = true;
+
+        this.contact_form.email = null;
+        this.contact_form.name = null;
+        this.contact_form.subject = null;
+        this.contact_form.message = null;
+
+      });
+
+    } else {
+      this.status_email.pre_send = false;
+      this.status_email.error_send = true;
+      setTimeout(() => {
+        this.status_email.pre_send = true;
+        this.status_email.error_send = false;
+      }, 1000)
+    }
+  }
+
+  ngOnInit() { }
+
 }
