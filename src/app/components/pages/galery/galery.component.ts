@@ -9,15 +9,15 @@ declare const MaterialPhotoGallery: any;
   selector: 'app-galery',
   templateUrl: './galery.component.html',
   styleUrls: ['./galery.component.css'],
-  providers:[ImagesService]
+  providers: [ImagesService]
 })
 export class GaleryComponent implements OnInit {
-  private images = null;
+  public images = null;
 
   @ViewChild(PreloadComponent) preload: PreloadComponent;
 
-  constructor(private imagesService: ImagesService) { 
-    
+  constructor(private imagesService: ImagesService) {
+
   }
 
   private injectImages = () => {
@@ -34,15 +34,15 @@ export class GaleryComponent implements OnInit {
       this.images = res;
 
       $(document).ready(function(){
-        let elem = $('.m-p-g');
-        var gallery = new MaterialPhotoGallery(elem);
-  
+        const elem = $('.m-p-g');
+        const gallery = new MaterialPhotoGallery(elem);
+
       });
       setTimeout(() => {
         this.preload.hidden();
       }, 3000);
     })
-   
+
   }
 
 }

@@ -11,8 +11,8 @@ import * as _ from 'lodash';
 })
 export class AprovedsComponent implements OnInit {
   private aprovedsBeforeFiltred = [];
-  private aprovedsAfterFiltred  = [];
-  private filter: string;
+  public aprovedsAfterFiltred  = [];
+  public filter: string;
   private loading = true;
 
   constructor(

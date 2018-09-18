@@ -5,11 +5,11 @@ import { EditalService } from 'app/services/edital/edital.service';
   selector: 'app-registry',
   templateUrl: './registry.component.html',
   styleUrls: ['./registry.component.css'],
-  providers:[EditalService]
-  
+  providers: [EditalService]
+
 })
 export class RegistryComponent implements OnInit {
-  private edital = null;
+  public edital = null;
   constructor(private editalService: EditalService) { }
 
   private injectEdital = () => {

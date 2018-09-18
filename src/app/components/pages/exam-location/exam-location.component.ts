@@ -6,10 +6,10 @@ import { ExamLocation      } from 'app/services/examLocation/exam-location.servi
   templateUrl: './exam-location.component.html',
   styleUrls:   ['./exam-location.component.css'],
   providers:   [ExamLocation]
-  
+
 })
 export class ExamLocationComponent implements OnInit {
-  private exam_location = null;
+  public exam_location = null;
 
   constructor(private editalService: ExamLocation) { }
 

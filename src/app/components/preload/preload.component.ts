@@ -8,7 +8,7 @@ declare const $: any;
 })
 export class PreloadComponent implements OnInit {
 
-  private status:Boolean;
+  public status: Boolean;
 
   constructor() {
     this.show();
@@ -17,15 +17,15 @@ export class PreloadComponent implements OnInit {
   ngOnInit() {
   }
 
-  show(){
+  show() {
     this.status = true;
-    $('body').css({'overflow-y':'hidden'})
+    $('body').css({'overflow-y': 'hidden'})
   }
 
-  hidden(){
+  hidden() {
     this.status = false;
-    $('body').css({'overflow-y':'scroll'})
-    
+    $('body').css({'overflow-y': 'scroll'})
+
   }
 
 }

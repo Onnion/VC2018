@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProvasService } from 'app/services/provas/provas.service';
 import { GabaritosService } from 'app/services/gabaritos/gabaritos.service';
-
 import * as _ from 'lodash';
 
 @Component({
@@ -11,7 +10,7 @@ import * as _ from 'lodash';
   providers: [ProvasService, GabaritosService]
 })
 export class OldTestesComponent implements OnInit {
-  private rows: any;
+  public rows: any;
 
   constructor(
     private provaService: ProvasService,

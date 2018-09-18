@@ -10,31 +10,31 @@ import * as _ from 'lodash';
   providers: [AprovedsService]
 })
 export class RelocatedComponent implements OnInit {
+  private aprovedsBeforeFiltred = [];
+  private aprovedsAfterFiltred  = [];
+  public filter: string;
+  private loading = true;
+
 
   constructor(
     private aproveds: AprovedsService,
     private route:    Router) { }
 
-  private aprovedsBeforeFiltred = [];
-  private aprovedsAfterFiltred  = [];
-  private filter: string;
-  private loading = true;
-  
   ngOnInit() {
     this.aproveds.getAproveds().then( ( res: any ) => {
       this.loading = false;
       this.aprovedsBeforeFiltred = [
       {
-        n_inscricao: 20181439, 
-        name: "ADELSON JOSÉ EVANGELISTA FILHO"
+        n_inscricao: 20181439,
+        name: 'ADELSON JOSÉ EVANGELISTA FILHO'
       },
       {
-        n_inscricao: 20180963, 
-        name: "LUCAS SILVA CHACON"
+        n_inscricao: 20180963,
+        name: 'LUCAS SILVA CHACON'
       },
       {
-        n_inscricao: 20180644, 
-        name: "WELYSON DE LIMA SANTANA"
+        n_inscricao: 20180644,
+        name: 'WELYSON DE LIMA SANTANA'
       },
     ]
       this.aprovedsAfterFiltred  = this.aprovedsBeforeFiltred;
@@ -47,7 +47,7 @@ export class RelocatedComponent implements OnInit {
   }
 
   isMobile () {
-    return document.getElementById('body').offsetWidth <= 768;    
+    return document.getElementById('body').offsetWidth <= 768;
   }
 
   handleFilter() {
@@ -59,7 +59,10 @@ export class RelocatedComponent implements OnInit {
   }
 
   hasFilter(aproved, filter): boolean {
-    return (aproved.name.toLowerCase().includes(this.replace(filter.toLowerCase())) || aproved.n_inscricao.toString().toLowerCase().includes(filter.toString().toLowerCase()));
+    return (
+      aproved.name.toLowerCase().includes(this.replace(filter.toLowerCase())) ||
+      aproved.n_inscricao.toString().toLowerCase().includes(filter.toString().toLowerCase())
+    );
   }
 
   notAproved () {
@@ -68,12 +71,12 @@ export class RelocatedComponent implements OnInit {
 
   replace (name: String) {
 
-    let _name = name.toLowerCase();                                                         
-    _name = _name.replace(new RegExp('[ÁÀÂÃ]','gi'), 'a');
-    _name = _name.replace(new RegExp('[ÉÈÊ]','gi'), 'e');
-    _name = _name.replace(new RegExp('[ÍÌÎ]','gi'), 'i');
-    _name = _name.replace(new RegExp('[ÓÒÔÕ]','gi'), 'o');
-    _name = _name.replace(new RegExp('[ÚÙÛ]','gi'), 'u');
-    return _name;             
+    let _name = name.toLowerCase();
+    _name = _name.replace(new RegExp('[ÁÀÂÃ]', 'gi'), 'a');
+    _name = _name.replace(new RegExp('[ÉÈÊ]', 'gi'), 'e');
+    _name = _name.replace(new RegExp('[ÍÌÎ]', 'gi'), 'i');
+    _name = _name.replace(new RegExp('[ÓÒÔÕ]', 'gi'), 'o');
+    _name = _name.replace(new RegExp('[ÚÙÛ]', 'gi'), 'u');
+    return _name;
   }
 }
